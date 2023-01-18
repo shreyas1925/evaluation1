@@ -1,0 +1,22 @@
+{
+  "name": "eval",
+  "version": "1.0.0",
+  "description": "",
+  "main": "BowlingScoreFinder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shreyas1925/evaluation1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shreyas1925/evaluation1/issues"
+  },
+  "homepage": "https://github.com/shreyas1925/evaluation1#readme",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
