@@ -23,23 +23,18 @@ const getBestScore = (frames) => {
 }
 
 const getTotalScore = (rolls) => {
-    for (let i = 0; i < rolls.length; i ++) {
-
-        if (rolls[i] !=10) {
-
+    for (let i = 0; i < rolls.length; i += 2) {
+        if (rolls[i] != 10) {
             let newarr = []
             newarr.push(rolls[i])
             newarr.push(rolls[i + 1])
             frames.push(newarr)
-
         }
-        if(rolls[i]==10)
-        {
+        if (rolls[i] == 10) {
             while (rolls[i] != 10) {
                 let newarr = []
                 newarr.push(rolls[i])
             }
-        
         }
 
         sum += rolls[i] + rolls[i + 1];
@@ -49,7 +44,7 @@ const getTotalScore = (rolls) => {
 }
 
 let rolls = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6]
-// let rolls = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10]
+
 
 let resframes = getTotalScore(rolls)
 console.log(resframes)
