@@ -5,7 +5,6 @@ let sum = 0
 
 let maxi = 0
 
-// if no strike had happened
 
 const getBestScore = (frames) => {
 
