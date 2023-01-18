@@ -50,3 +50,5 @@ let resframes = getTotalScore(rolls)
 console.log(resframes)
 let bestScore = getBestScore(resframes)
 console.log(bestScore)
+
+module.exports = { getBestScore,getTotalScore}
