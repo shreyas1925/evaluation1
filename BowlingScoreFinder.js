@@ -23,6 +23,11 @@ const getBestScore = (frames) => {
 
 const getTotalScore = (rolls) => {
 
+    if(!Array.isArray(rolls))
+    {
+        throw new Error("Input is not an array")
+    }
+
     for (let i = 0; i < rolls.length;) {
 
         // creating a frame
@@ -41,22 +46,24 @@ const getTotalScore = (rolls) => {
         }
 
         // basic test case for total score 
-        
+
         if(rolls[i] == 10){
             sum+= 10 + rolls[i+1] + rolls[i+2]
-            i+=2
-
+            i++
+            
         }
 
         else if(rolls[i]+rolls[i+1] === 10){
             sum+= 10 + rolls[i+2]
-            i+=1
+            i+=2
+            
         }
         
         else{
 
         sum += rolls[i] + rolls[i + 1];
         i+=2
+        
 
         }
     }
