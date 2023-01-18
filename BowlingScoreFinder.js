@@ -22,7 +22,11 @@ const getBestScore = (frames) => {
 }
 
 const getTotalScore = (rolls) => {
-    for (let i = 0; i < rolls.length; i += 2) {
+
+    for (let i = 0; i < rolls.length;) {
+
+        // creating a frame
+
         if (rolls[i] != 10) {
             let newarr = []
             newarr.push(rolls[i])
@@ -36,31 +40,41 @@ const getTotalScore = (rolls) => {
             }
         }
 
-        // basic test case 
+        // basic test case for total score 
+        
         if(rolls[i] == 10){
             sum+= 10 + rolls[i+1] + rolls[i+2]
+            i+=2
+
         }
 
         else if(rolls[i]+rolls[i+1] === 10){
             sum+= 10 + rolls[i+2]
+            i+=1
         }
         
         else{
 
         sum += rolls[i] + rolls[i + 1];
+        i+=2
 
         }
     }
-    console.log(`Total score is ${sum}`)
-    return frames
+    // console.log(`Total score is ${sum}`)
+    return sum
 }
 
 let rolls = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6]
 
+// let rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10]
 
-let resframes = getTotalScore(rolls)
-console.log(resframes)
-let bestScore = getBestScore(resframes)
+
+let totalSum = getTotalScore(rolls)
+console.log(totalSum)
+
+console.log(frames)
+
+let bestScore = getBestScore(frames)
 console.log(bestScore)
 
 module.exports = { getBestScore,getTotalScore}
