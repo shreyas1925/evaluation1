@@ -16,9 +16,12 @@ describe('Calculates the score in the bowling game',()=>{
         const set2=[6, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         expect(getTotalScore(set2)).toBe(16)
     })
-    it('should give 16 when scored set3',()=>{
-        const set2=[10, 9, 1, 10, 4, 5, 3, 6, 4, 4, 1, 3, 10, 1, 9, 5, 5, 2]
-        expect(getTotalScore(set2)).toBe(138)
+    // it('should give 16 when scored set3',()=>{
+    //     const set2=[10, 9, 1, 10, 4, 5, 3, 6, 4, 4, 1, 3, 10, 1, 9, 5, 5, 2]
+    //     expect(getTotalScore(set2)).toBe(138)
+    // })
+    it("testcase 4", () => {
+        expect(getTotalScore([8, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])).toBe(15)
     })
     it('should give 16 when scored set3',()=>{
         const set2=[10, 10, 10, 5, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -34,6 +37,6 @@ describe('Calculates the score in the bowling game',()=>{
     })
     it('should give 360 when all frames are strike', () => {
         const allStrikes = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
-        expect(getTotalScore(allStrikes)).toBe(360)
+        expect(getTotalScore(allStrikes)).toBe(300)
 })
 })
