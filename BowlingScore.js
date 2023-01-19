@@ -2,6 +2,19 @@ let frames = 10
 
 
 const getTotalScore = (rolls) => {
+
+    if (!Array.isArray(rolls)) {
+        throw new Error('Input is nor an array');
+    }
+
+    if (!rolls.every(element => typeof element === 'number')) {
+        throw new Error('Input array is not an integer array');
+    }
+
+    if (rolls.length === 21 && (rolls[18] + rolls[19] < 10)) {
+        throw new Error('Inputs are invalid');
+    }
+
     let totalScore = 0
     let frameCount = 0
     let index = 0
@@ -16,7 +29,7 @@ const getTotalScore = (rolls) => {
             totalScore += rolls[index] + rolls[index + 1]
             index += 2
         }
-        
+
         frameCount += 1
     }
 
@@ -43,5 +56,5 @@ console.log(getTotalScore([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 console.log(getTotalScore([6, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]))
 console.log(getBestScore(games))
 
-module.exports = {getTotalScore,getBestScore}
+module.exports = { getTotalScore, getBestScore }
 
